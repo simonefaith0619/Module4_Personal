@@ -1,13 +1,16 @@
 ---
 title: "Plot Deconstruction"
-output: html_document
+output:
+  html_document: default
+  word_document: default
 date: "2024-05-15"
 ---
 
 ```{r}
-#Import Dataset 
+#Import Dataset and load packages 
 
 chl_data<- read.csv("data/Chlorophyll_data.csv")
+library(ggplot2)
 
 ```
 
