@@ -1,14 +1,19 @@
 ---
-title: "MB5370 Module 04. Workshop 1 - Introduction"
-author: "Ben Cresswell"
+title: "DataScience_Workshop1"
 output: html_document
-date: "2024-03-22"
+date: "2024-05-14"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+---
+title: "MB5370 Module 04. Workshop 1 - Introduction"
+author: "Ben Cresswell"
+output: html_document
+date: "2024-03-22"
+---
 
 # Install and load tidyverse packages
 ```{r}
@@ -34,7 +39,7 @@ summary(mpg)
 # Create first plot
 ```{r}
 ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = disp, y = hwy))
+  geom_point(mapping = aes(x = displ, y = hwy))
 ```
 
 The plot shows a negative relationship between engine size (displ) and fuel efficiency (hwy). In other words, cars with big engines use more fuel. What does this say about fuel efficiency and engine size?
