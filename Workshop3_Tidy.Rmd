@@ -3,3 +3,33 @@ title: "Workshop3_tidy"
 output: html_document
 date: "2024-05-15"
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Installing Packages and loading data
+
+#library(tidyverse)
+
+fish_data <- read.csv("~/QFISH1.csv", header=FALSE)
+
+
+```
+
+```{r}
+# The variable "Year" is at the beginning of each column, but we want all years to be in one singlular column
+
+```
+
+
+
+```{r}
+year2001<-Catch_data_updated |>
+  select(Area, starts_with("2001"))
+
+
+```
+
+
