@@ -1,0 +1,18 @@
+---
+title: "Workshop3_Tidy"
+output: html_document
+date: "2024-05-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Importing Data set after making some adjustments in excel
+
+
+
+
+
+```
