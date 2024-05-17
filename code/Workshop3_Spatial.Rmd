@@ -11,10 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 # Loading packages
 
-library(tidyverse)
-install.packages("sf") 
-install.packages("terra")
-install.packages("tmap")
+#library(tidyverse)
+#install.packages("sf") 
+#install.packages("terra")
+#install.packages("tmap")
+library(tidyr)
 library(sf) # simple features
 library (terra) # for raster
 library(tmap) # Thematic maps are geographical maps in which spatial data distributions are visualized
