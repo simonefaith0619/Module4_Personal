@@ -1,0 +1,70 @@
+---
+title: "Workshop4_Spatial"
+output: html_document
+date: "2024-05-17"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Loading packages
+
+library(tidyverse)
+install.packages("sf") 
+install.packages("terra")
+install.packages("tmap")
+library(sf) # simple features
+library (terra) # for raster
+library(tmap) # Thematic maps are geographical maps in which spatial data distributions are visualized
+
+```
+
+```{r}
+library(readr)
+dat <- read_csv("../data/copepods_raw.csv")
+```
+
+```{r}
+# Creating a figure that plots our spatial data, but isnt neccessarily spatially accurate
+library(ggplot2)
+ggplot(dat) + 
+  aes(x = longitude, y = latitude, color = richness_raw) +
+  geom_point()
+```
+
+```{r}
+#So, now let’s look at the richness data 
+
+ggplot(dat, aes(x = latitude, y = richness_raw)) + 
+  stat_smooth() + 
+  geom_point()
+```
+
+
+```{r}
+#turn our point data into a spatially referenced data frame
+
+sdat <- st_as_sf(dat, coords = c("longitude", "latitude"), 
+                 crs = 4326)
+
+```
+
+
+```{r}
+#Coordinate reference systems
+
+crs4326 <- st_crs(4326)
+crs4326 # look at the whole CRS
+crs4326$Name # pull out just the name of the crs
+[1] "WGS 84"
+
+```
+
+```{r}
+#Feature collection (points)
+sdat
+
+```
+
