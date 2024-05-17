@@ -1,0 +1,43 @@
+---
+title: "Workshop3_Tidy"
+output: html_document
+date: "2024-05-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+#Importing Data set after making some adjustments in excel
+shark_data <- read.csv("../data/shark_data.csv")
+
+```
+
+
+```{r}
+# Set Factors
+
+shark_data$Area <- factor(shark_data$Area)
+shark_data$Year <- factor(shark_data$Year)
+shark_data$Species<- factor(shark_data$Species)
+
+```
+
+```{r}
+# Creating Figure
+ggplot(shark_data, aes(x=Year, y=Count)) +
+       geom_bar(aes(fill=Species),position=position_dodge(width=1), stat="identity") +
+  facet_wrap(~Area) +
+  ylab("Species Catch")
+
+```
+
+
