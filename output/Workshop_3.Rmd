@@ -33,10 +33,12 @@ shark_data$Species<- factor(shark_data$Species)
 
 ```{r}
 # Creating Figure
-ggplot(shark_data, aes(x=Year, y=Count)) +
+catch_figure<- ggplot(shark_data, aes(x=Year, y=Count)) +
        geom_bar(aes(fill=Species),position=position_dodge(width=1), stat="identity") +
   facet_wrap(~Area) +
   ylab("Species Catch")
+
+#ggsave(filename = "../output/catch_figure.jpg", plot=catch_figure, width=200, height = 140, units="mm")
 
 ```
 
